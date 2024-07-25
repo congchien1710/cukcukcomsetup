@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CUKCUK COM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scriptadd.js"></script>
+    
+	<style>
+		td {
+			vertical-align: middle;
+		}
+		
+		.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #ffffff;
+    background-color: #0f7cd3;
+    border-color: var(--bs-nav-tabs-link-active-border-color);
+}
+	</style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">CUKCUK COM</a>
+            </li>
+		   <li class="nav-item">
+              <a class="nav-link text-bold text-red" href="#">Cập nhật lần cuối: 2024-07-19 12:00</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="mt-2">
+        <form id="fileForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="VongLap" class="form-label">Vòng lặp</label>
+                        <input class="form-control form-control-sm" id="VongLap" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ENT_Link" class="form-label">ENT Link MISA</label>
+                        <input class="form-control form-control-sm" id="ENT_Link" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="TS_Link" class="form-label">TS Link MISA</label>
+                        <input class="form-control form-control-sm" id="TS_Link" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="QS_Link" class="form-label">QS Link MISA</label>
+                        <input class="form-control form-control-sm" id="QS_Link" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="MobileSaleDE_GG" class="form-label">Mobile SaleDE Link</label>
+                        <input class="form-control form-control-sm" id="MobileSaleDE_GG" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="Version" class="form-label">Version</label>
+                        <input class="form-control form-control-sm" id="Version" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ENT_LinkGG" class="form-label">ENT Link Google Drive</label>
+                        <input class="form-control form-control-sm" id="ENT_LinkGG" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="TS_LinkGG" class="form-label">TS Link Google Drive</label>
+                        <input class="form-control form-control-sm" id="TS_LinkGG" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="QS_LinkGG" class="form-label">QS Link Google Drive</label>
+                        <input class="form-control form-control-sm" id="QS_LinkGG" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="MobileKDS_GG" class="form-label">Mobile KDS Link</label>
+                        <input class="form-control form-control-sm" id="MobileKDS_GG" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="MobileDIB_GG" class="form-label">Mobile DIB Link</label>
+                        <input class="form-control form-control-sm" id="MobileDIB_GG" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

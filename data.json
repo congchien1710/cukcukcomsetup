@@ -1,0 +1,28 @@
+{
+  "1": {
+    "VongLap": "R114",
+    "Version": "1",
+    "ENT_Link": "1",
+    "ENT_LinkGG": "1",
+    "TS_Link": "1",
+    "TS_LinkGG": "1",
+    "QS_Link": "1",
+    "QS_LinkGG": "1",
+    "MobileSaleDE_GG": "1",
+    "MobileKDS_GG": "1",
+    "MobileDIB_GG": "1"
+  },
+  "2": {
+    "VongLap": "R115",
+    "Version": "2",
+    "ENT_Link": "2",
+    "ENT_LinkGG": "2",
+    "TS_Link": "2",
+    "TS_LinkGG": "2",
+    "QS_Link": "2",
+    "QS_LinkGG": "2",
+    "MobileSaleDE_GG": "2",
+    "MobileKDS_GG": "2",
+    "MobileDIB_GG": "2"
+  }
+}
