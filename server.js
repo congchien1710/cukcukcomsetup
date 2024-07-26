@@ -1,37 +1,42 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
+const { Builder } = require('@netlify/functions');
+const fs = require('fs').promises;
 const path = require('path');
 
-const app = express();
-const PORT = 3000;
+const handler = async (event) => {
+  const dataFilePath = path.join(__dirname, '..', 'data.json');
 
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+  if (event.httpMethod === 'GET') {
+    try {
+      const data = await fs.readFile(dataFilePath, 'utf-8');
+      return {
+        statusCode: 200,
+        body: data
+      };
+    } catch (error) {
+      return {
+        statusCode: 500,
+        body: 'Error reading data file'
+      };
+    }
+  } else if (event.httpMethod === 'POST') {
+    try {
+      await fs.writeFile(dataFilePath, event.body);
+      return {
+        statusCode: 200,
+        body: 'Data saved successfully'
+      };
+    } catch (error) {
+      return {
+        statusCode: 500,
+        body: 'Error saving data'
+      };
+    }
+  } else {
+    return {
+      statusCode: 405,
+      body: 'Method Not Allowed'
+    };
+  }
+};
 
-const dataFilePath = path.join(__dirname, 'data.json');
-
-// Lấy dữ liệu
-app.get('/data', (req, res) => {
-    fs.readFile(dataFilePath, 'utf8', (err, data) => {
-        if (err) {
-            return res.status(500).send('Error reading data file');
-        }
-        res.send(JSON.parse(data));
-    });
-});
-
-// Cập nhật dữ liệu
-app.post('/data', (req, res) => {
-    const newData = req.body;
-    fs.writeFile(dataFilePath, JSON.stringify(newData, null, 2), (err) => {
-        if (err) {
-            return res.status(500).send('Error writing data file');
-        }
-        res.send('Data saved successfully');
-    });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+module.exports.handler = handler;
