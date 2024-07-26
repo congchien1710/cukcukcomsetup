@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load existing files from server
     const loadFiles = () => {
-        fetch('/data')
+        fetch('/api/data')
             .then(response => response.json())
             .then(files => {
                 fileTableBody.innerHTML = '';
